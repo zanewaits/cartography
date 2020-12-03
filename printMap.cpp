@@ -17,8 +17,6 @@ int main(int argc, char * argv[])
 		int curX = 0;
 		int curY = 0;
 		int curGrov = 0;
-		printw("opened map.txt");
-		getch();
 		while (cartographer >> grov >> item)
 		{
 			switch (grov)
@@ -43,7 +41,7 @@ int main(int argc, char * argv[])
 					break;
 			}
 			attron(COLOR_PAIR(curGrov));
-			mvprintw(curX, curY, " ");
+			mvprintw(curY, curX, "%d", item);
 			attroff(COLOR_PAIR(curGrov));
 			++curX;
 			if (curX >= BORDER_SIZE)
