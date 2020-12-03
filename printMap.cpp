@@ -49,6 +49,12 @@ int main(int argc, char * argv[])
 				curX = 0;
 				++curY;
 			}
+			if (curY >= (LINES - 1))
+			{
+				getch();
+				clear();
+				curY = 0;
+			}
 		}
 		cartographer.close();
 	}
@@ -66,6 +72,7 @@ int main(int argc, char * argv[])
 
 void color_build()
 {
+	init_pair(0, COLOR_BLACK, COLOR_BLACK);
 	init_pair(1, COLOR_BLACK, COLOR_GREEN);
 	init_pair(2, COLOR_BLACK, COLOR_MAGENTA);
 	init_pair(3, COLOR_CYAN, COLOR_BLUE);
