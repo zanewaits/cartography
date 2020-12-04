@@ -36,12 +36,16 @@ int main(int argc, char * argv[])
 				case ('r'):
 					curGrov = ROYAL_COLOR;
 					break;
+				case ('h'):
+					curGrov = HERO_COLOR;
+					break;
 				default:
 					curGrov = 0;
 					break;
 			}
 			attron(COLOR_PAIR(curGrov));
 			mvprintw(curY, curX, "%d", item);
+			//mvprintw(curY, curX, " ");
 			attroff(COLOR_PAIR(curGrov));
 			++curX;
 			if (curX >= BORDER_SIZE)
